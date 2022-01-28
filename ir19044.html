@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sass</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" nonce="B0E6B7039B3A1C41AD35610448B88DAC" charset="UTF-8"></script><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" nonce="B0E6B7039B3A1C41AD35610448B88DAC" charset="UTF-8"></script></head>
+    <body> 
+        <div class="container">
+           <div class="row">
+             <div class="col-3">
+               <h3>Contents</h3>
+                <ul class="list-group list-group-flush"> 
+                    <li class="list-group-item active"><a href="#Major" class="text-white">Major implementations</a></li>
+                    <li class="list-group-item"><a href="#Features" class="text-primary">Features</a></li>
+                    <li class="list-group-item">&nbsp; &nbsp;<a href="#Variables" class="text-primary">Variables</a></li>
+                    <li class="list-group-item">&nbsp; &nbsp;<a href="#Nesting" class="text-primary">Nesting</a></li>
+                    <li class="list-group-item">&nbsp; &nbsp;<a href="#Selector" class="text-primary">Selector inheritance</a></li>
+                    <li class="list-group-item"><a href="#IDE" class="text-primary">IDE integration</a></li>
+                    <li class="list-group-item"><a href="#Video" class="text-primary">Video</a></li> 
+                  </ul>
+               
+
+             </div>
+             <div class="col">
+              
+              <h1>Sass</h1>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/220px-Sass_Logo_Color.svg.png" 
+              alt="Attels nav atrasts"  class="ml-3 mb-3 rounded float-right"
+              width="230" height="160"> 
+                    
+
+                 <div class="font-weight-light">
+                 
+                 <p class="lead text-justify"><em><abbr>Sass</abbr></em>
+                 (short for <i>syntactically awesome style sheets</i>) is a style sheet language initially designed by Hampton Catlin and developed by 
+                 Natalie Weizenbaum. After its initial versions, Weizenbaum and Chris Eppstein have continued 
+                 to extend Sass with SassScript, a simple scripting language used in Sass
+                 files.</p>
+                 </div>
+                 
+        
+                
+                 <p class="text-justify">Sass is a preprocessor scripting language that is interpreted or compiled into
+                 <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">Cascading Style Sheets (<abbr>CSS</abbr>)</a>. SassScript is the scripting language itself. Sass consists of two syntaxes. The original syntax, called &quot;the indented syntax,&quot; uses a syntax similar to Haml. It uses indentation to separate code blocks and newline characters to separate rules. The newer syntax, &quot;SCSS&quot; (Sassy CSS), uses block formatting like that of CSS. It uses braces to denote code blocks and semicolons to separate lines within a block. The indented syntax and SCSS files are traditionally given the extensions .sass and .scss, respectively.</p>
+                 <p class="text-justify">CSS3 consists of a series of selectors and pseudo-selectors that group rules that apply to them. Sass (in the larger context of both syntaxes) extends CSS by providing several mechanisms available in more traditional programming languages, particularly object-oriented languages, but that are not available to CSS3 itself. When SassScript is interpreted, it creates blocks of CSS rules for various selectors as defined by the Sass file. The Sass interpreter translates SassScript into CSS. Alternatively, Sass can monitor the .sass or .scss file and translate it to an output .css file whenever the .sass or .scss file is saved.</p>
+                 <p class="text-justify">CSS3 supports external style sheets. This technique allows you to define a style sheet as a separate document and import it into your web pages 
+                 using a <code> &lt;link&gt; </code>tag.</p>   
+                 
+                      
+
+                <h2><a id="Major">Major implementations</a></h2>
+                <p>SassScript was implemented in multiple languages, the noteworthy implementations are:</p>
+                <ul>
+                    <li>The original open-source Ruby implementation created in 2006, since deprecated due to the lack of maintainers and reached End-of-Life in March 2019.</li>
+                    <li>Number 2</li>
+                    <li>The official open-source Dart implementation.</li>
+                    <li>libSass, the official open-source C++ implementation.</li>
+                    <li>the official JavaScript implementation, published as "sass" module on npm.</li>
+                    <li>JSass, an unofficial Java implementation.</li>
+                    <li>phamlp, an unofficial SASS/SCSS implementation in PHP.</li>
+                    <li>Vaadin has a Java implementation of Sass.</li>
+                    <li>Firebug, a Firefox XUL (&quot;legacy&quot;) extension for web development. It has been since deprecated in favor of developer tools integrated into Firefox itself. It stopped working since Firefox 57 dropped support for XUL extensions.</li>
+                </ul>
+
+                <h2><a id="Features">Features</a></h2>
+                <h3><a id="Variables">Variables</a></h3>
+                <p>Sass allows variables to be defined. Variables begin with a dollar sign (<i><span class="text-danger">&#36;</span></i>). Variable assignment is done with a colon (<span style="color:red">:</span>).</p>
+                <p>SassScript supports four data types:</p>
+                <ul>
+                        <li>Numbers (including units)</li>
+                        <li>Strings (with quotes or without)</li>
+                        <li>Colors (name, or names)</li>
+                        <li>Booleans</li>
+                </ul>
+                <p class="text-justify">Variables can be arguments to or results from one of several available functions. During translation, the values of the variables are inserted into the output CSS document.</p>
+
+
+                <p><strong>In SCSS style</strong></p>
+                <div class="mb-2 bg-light text-dark">
+                    <pre><code>$primary-color: #3bbfce;
+$margin: 16px;
+                            
+.content-navigation {
+  border-color: $primary-color;
+  color: darken($primary-color, 10%);
+}
+                            
+.border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+  border-color: $primary-color;
+}</code></pre>
+                </div>
+
+
+                <p>Would compile to:</p>
+                <div class="mb-2 bg-light text-dark">
+                        <pre><code>.content-navigation {
+  border-color: #3bbfce;
+  color: #2b9eab;
+}
+                              
+.border {
+  padding: 8px;
+  margin: 8px;
+  border-color: #3bbfce;
+}</code></pre>
+                    </div>
+
+
+
+                    <h3><a id="Nesting">Nesting</a></h3>
+                    <p class="text-justify">CSS does support logical nesting, but the code blocks themselves are not nested. Sass allows the nested code to be inserted within each other.</p>
+                    <p><strong>In SCSS style</strong></p>
+                <div class="mb-2 bg-light text-dark">
+                    <pre><code>table.hl {
+  margin: 2em 0;
+  td.ln {
+    text-align: right;
+  }
+}
+                          
+li {
+  font: {
+    family: serif;
+    weight: bold;
+    size: 1.3em;
+  }
+}</code></pre>
+                    </div>
+
+
+                <p>Would compile to:</p>
+                <div class="mb-2 bg-light text-dark">
+                        <pre><code>table.hl {
+  margin: 2em 0;
+}
+table.hl td.ln {
+  text-align: right;
+}
+                              
+li {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1.3em;
+}</code></pre>
+                    </div>
+
+
+
+
+
+                    <h4>Loops</h4>
+                    <p class="text-justify">Sass allows for iterating over variables using
+                    <code>@for</code>, <code>@each</code> and <code>@while</code>, which can be used to apply different styles to elements 
+                     with similar classes or ids.</p>
+                    <div class="mb-2 bg-light text-dark">
+                    <pre><code>$squareCount: 4
+@for $i from 1 through $squareCount 
+  #square-#{$i} 
+   background-color: red
+   width: 50px * $i
+   height: 120px / $i</code></pre>
+                     </div>
+                        
+
+                    <p>The above example would compile to:</p>
+                    <div class="mb-2 bg-light text-dark">
+                            <pre><code>#square-1 {
+  background-color: red;
+  width: 50px;
+  height: 120px;
+}
+                                  
+#square-2 {
+  background-color: red;
+  width: 100px;
+  height: 60px;
+}
+                                  
+#square-3 {
+  background-color: red;
+  width: 150px;
+  height: 40px;
+}</code></pre>
+                    </div>
+                    <h3><a id="Selector">Selector inheritance</a></h3>
+                    <p class="text-justify">While CSS3 supports the Document Object Model (DOM) hierarchy, it does not allow selector inheritance. In Sass, inheritance is achieved by inserting
+                    a line inside of a code block that uses the <code>@extend</code> keyword and references another selector. The extended selector's attributes are applied to the calling selector.</p>
+                    <div class="mb-2 bg-light text-dark">
+                            <pre><code>.error
+  border: 1px #f00
+  background: #fdd
+                                  
+.error.intrusion 
+  font-size: 1.3em
+  font-weight: bold
+                                  
+.badError 
+  @extend .error
+  border-width: 3px</code></pre>
+                   </div>
+                   <p>Would compile to:</p>
+                   <div class="mb-2 bg-light text-dark">
+                        <pre><code>.error, .badError {
+  border: 1px #f00;
+  background: #fdd;
+}
+                              
+.error.intrusion,
+.badError.intrusion {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+                              
+.badError {
+  border-width: 3px;
+}</code></pre>
+                  </div>
+
+
+
+
+
+                  <h3><a id="IDE">IDE integration</a></h3>
+                  <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">IDE</th>
+                            <th scope="col">Software</th>
+                            <th scope="col">website</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Adobe Dreamweaver CC 2017</td>
+                            <td></td>
+                            <td><a href="https://blogs.adobe.com/creativecloud/getting-started-with-css-preprocessors-less-and-sass/">https://blogs.adobe.com/creativecloud/getting-started-with-css-preprocessors-less-and-sass/</a></td>
+                          </tr>
+                          <tr>
+                            <td>Eclipse</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Emacs</td>
+                            <td>SCSS Mode</td>
+                            <td><a href="https://github.com/antonj/scss-mode/">https://github.com/antonj/scss-mode/</a></td>
+                          </tr>
+                          <tr>
+                            <td>JetBrains IntelliJ IDEA (Ultimate Edition)</td>
+                            <td></td>
+                            <td><a href="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</a></td>
+                          </tr>
+                          <tr>
+                            <td>JetBrains PhpStorm</td>
+                            <td></td>
+                            <td><a href="http://www.jetbrains.com/phpstorm/">http://www.jetbrains.com/phpstorm/</a></td>
+                          </tr>
+                          <tr>
+                            <td>Microsoft Visual Studio	Mindscape</td>
+                            <td>Mindscape</td>
+                            <td><a href="http://www.mindscapehq.com/products/web-workbench">http://www.mindscapehq.com/products/web-workbench</a></td>
+                          </tr>
+                          <tr>
+                            <td>Vim</td>
+                            <td>haml.zip</td>
+                            <td><a href="http://www.vim.org/scripts/script.php?script_id=1433">http://www.vim.org/scripts/script.php?script_id=1433</a></td>
+                          </tr>
+                            
+                        </tbody>
+                      </table>
+
+
+
+
+
+                      <h3><a id="Video">Video</a></h3>
+                      <p class="text-justify">Before you start working with <strong>Sass</strong>, it's worth watching an online tutorial about it. The tutorial was published 
+                      on <a href="https://www.youtube.com/">Youtube.</a></p>
+                      
+                    
+                      
+                          
+                        
+                  <p class="text-center"><iframe width="560" height="315" src="https://www.youtube.com/embed/Zz6eOVaaelI" allowfullscreen></iframe></p>
+                
+
+                <hr><footer>
+                    <h4>Credits</h4>
+                    <p>This homework was created by <mark>Ilja Repko</mark> on <mark>20.10.19 23:55</mark>.</p></footer>
+                
+              
+              
+              
+                
+
+                
+             </div>
+           </div>
+        </div>
+    
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            <!-- Replace this comment line by "Web Technology 1" homework solution. -->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
